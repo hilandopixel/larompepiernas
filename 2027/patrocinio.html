@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dossier de Patrocinio | La Rompepiernas 2027</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        rompe: {
+                            red: '#e60000',
+                            darkRed: '#990000',
+                            black: '#0a0a0a',
+                            card: '#141414',
+                            gray: '#1f1f1f'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .bg-pattern {
+            background-image: radial-gradient(rgba(230, 0, 0, 0.15) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .hero-clip {
+            clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            border-color: #e60000;
+            box-shadow: 0 10px 30px -10px rgba(230, 0, 0, 0.3);
+        }
+        /* Carrusel Infinito */
+        @keyframes carouselScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .carousel-track {
+            display: flex;
+            width: max-content;
+            animation: carouselScroll 25s linear infinite;
+        }
+        .carousel-track:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body class="bg-rompe-black text-white antialiased overflow-x-hidden selection:bg-rompe-red selection:text-white relative">
+
+    <!-- BARRA FLOTANTE CONTACTO -->
+    <aside class="fixed left-3 md:left-5 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-3">
+        <a href="tel:637528092" aria-label="Teléfono" class="w-12 h-12 bg-rompe-red hover:bg-red-700 text-white rounded-full flex items-center justify-center shadow-lg transform hover:scale-110 transition duration-300" title="Llamar a Graciano: 637 528 092">
+            <i class="fas fa-phone-alt text-lg"></i>
+        </a>
+        <a href="mailto:graciano@guadiato.es" aria-label="Email" class="w-12 h-12 bg-white hover:bg-slate-200 text-rompe-black rounded-full flex items-center justify-center shadow-lg transform hover:scale-110 transition duration-300" title="Enviar correo">
+            <i class="fas fa-envelope text-lg"></i>
+        </a>
+    </aside>
+
+    <!-- HERO SECTION -->
+    <header class="relative min-h-screen flex items-center justify-center overflow-hidden bg-rompe-black hero-clip py-20 bg-pattern border-b-2 border-rompe-red">
+        <div class="absolute inset-0 z-0 bg-gradient-to-b from-black/80 via-rompe-black/90 to-rompe-black"></div>
+        
+        <div class="container mx-auto px-6 relative z-10 text-center max-w-5xl">
+
+
+            <div class="flex justify-center items-center reveal reveal-delay-2 mt-6 lg:mt-0">
+                <div class="relative group max-w-xs sm:max-w-md lg:max-w-lg">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-califa-yellow to-califa-red rounded-2xl blur opacity-40 group-hover:opacity-80 transition duration-500"></div>
+                    <img src="fecha.png" alt="Califa Mountain Festival Poster" class="relative rounded-xl shadow-2xl border-4 border-white/20 transform rotate-1 hover:rotate-0 transition duration-500 max-h-[50vh] sm:max-h-[65vh] lg:max-h-[75vh] w-auto object-contain mx-auto">
+                </div>
+            </div>
+
+            
+            
+            <h1 class="text-3xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight mb-2 text-white">
+                MEDIA MARATÓN | MARATÓN | SENDERISMO | INFANTILES
+            </h1>
+<div class="inline-block bg-rompe-red text-white font-black px-6 py-2 rounded-full mb-4 text-sm md:text-base uppercase tracking-widest shadow-lg border border-white/20">
+                3 ABRIL 2027 • ESPIEL | BELMEZ
+            </div>
+            <p class="text-lg md:text-2xl font-extrabold uppercase tracking-wider text-amber-400 mb-6">
+                Fíjala ya en tu calendario
+            </p>
+
+            <div class="bg-rompe-card/80 backdrop-blur-md border border-white/10 p-6 rounded-2xl max-w-2xl mx-auto mb-8 shadow-2xl">
+                <h2 class="text-xl md:text-2xl font-black uppercase mb-2 text-white">Dossier de Patrocinio 2027</h2>
+                <p class="text-slate-300 text-sm md:text-base">
+                    Una oportunidad única para asociar tu empresa al deporte, la convivencia y la promoción del Valle del Guadiato.
+                </p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#modalidades" class="bg-rompe-red hover:bg-red-700 text-white font-black uppercase tracking-wider py-4 px-8 rounded-xl transition duration-300 shadow-[0_0_20px_rgba(230,0,0,0.5)] text-sm md:text-base">
+                    Ver Modalidades
+                </a>
+                <a href="#soportes-marca" class="bg-white hover:bg-slate-200 text-rompe-black font-black uppercase tracking-wider py-4 px-8 rounded-xl transition duration-300 text-sm md:text-base shadow-lg">
+                    Soportes y Logos
+                </a>
+            </div>
+
+            <!-- LOGOS ORGANIZADORES EN EL HERO -->
+            <div class="mt-12 pt-6 border-t border-white/10">
+                <p class="text-xs text-slate-400 font-bold uppercase tracking-wider mb-4">Organizan:</p>
+                <div class="flex flex-wrap justify-center items-center gap-6 md:gap-10">
+                    <div class="bg-white p-3 rounded-xl shadow-md flex items-center justify-center h-14 w-28 md:h-16 md:w-36">
+                        <img src="/images/logos/belmez.png" alt="Ayuntamiento de Belmez" class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div class="bg-white p-3 rounded-xl shadow-md flex items-center justify-center h-14 w-28 md:h-16 md:w-36">
+                        <img src="/images/logos/espiel.png" alt="Ayuntamiento de Espiel" class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div class="bg-white p-3 rounded-xl shadow-md flex items-center justify-center h-14 w-28 md:h-16 md:w-36">
+                        <img src="/images/logos/logo-mancomunidad-guadiato-borde-azul-vector.png" alt="Mancomunidad Valle del Guadiato" class="max-h-full max-w-full object-contain">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- GALERÍA INFINITA (CARRUSEL DE IMÁGENES DE LA CARRERA) -->
+    <section class="py-10 bg-rompe-card border-b border-white/10 overflow-hidden" id="carrusel">
+        <div class="container mx-auto px-6 text-center mb-6 reveal">
+            <h3 class="text-xl font-black uppercase tracking-wider text-white">Galería de <span class="text-rompe-red">Momentos de la Carrera</span></h3>
+            <p class="text-slate-400 text-xs">Instantes inolvidables de ediciones anteriores</p>
+        </div>
+        <div class="relative w-full overflow-hidden">
+            <div class="carousel-track">
+                <div class="w-64 h-40 mx-3 flex-shrink-0 rounded-xl overflow-hidden bg-slate-900 border border-white/10 shadow-lg relative group">
+                    <img src="/optimize/1.webp" alt="Carrera 1" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=600&q=80'">
+                </div>
+                <div class="w-64 h-40 mx-3 flex-shrink-0 rounded-xl overflow-hidden bg-slate-900 border border-white/10 shadow-lg relative group">
+                    <img src="/optimize/2.webp" alt="Carrera 2" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?auto=format&fit=crop&w=600&q=80'">
+                </div>
+                <div class="w-64 h-40 mx-3 flex-shrink-0 rounded-xl overflow-hidden bg-slate-900 border border-white/10 shadow-lg relative group">
+                    <img src="/optimize/3.webp" alt="Carrera 3" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=600&q=80'">
+                </div>
+                <div class="w-64 h-40 mx-3 flex-shrink-0 rounded-xl overflow-hidden bg-slate-900 border border-white/10 shadow-lg relative group">
+                    <img src="/optimize/4.webp" alt="Carrera 4" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1517649763962-0c6232660102?auto=format&fit=crop&w=600&q=80'">
+                </div>
+                <div class="w-64 h-40 mx-3 flex-shrink-0 rounded-xl overflow-hidden bg-slate-900 border border-white/10 shadow-lg relative group">
+                    <img src="/optimize/5.webp" alt="Carrera 4" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1517649763962-0c6232660102?auto=format&fit=crop&w=600&q=80'">
+                </div>
+                <div class="w-64 h-40 mx-3 flex-shrink-0 rounded-xl overflow-hidden bg-slate-900 border border-white/10 shadow-lg relative group">
+                    <img src="/optimize/6.webp" alt="Carrera 4" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1517649763962-0c6232660102?auto=format&fit=crop&w=600&q=80'">
+                </div>
+                <!-- Elementos duplicados para efecto infinito continuo -->
+                <div class="w-64 h-40 mx-3 flex-shrink-0 rounded-xl overflow-hidden bg-slate-900 border border-white/10 shadow-lg relative group">
+                    <img src="/optimize/1.webp" alt="Carrera 1" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=600&q=80'">
+                </div>
+                <div class="w-64 h-40 mx-3 flex-shrink-0 rounded-xl overflow-hidden bg-slate-900 border border-white/10 shadow-lg relative group">
+                    <img src="/optimize/2.webp" alt="Carrera 2" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?auto=format&fit=crop&w=600&q=80'">
+                </div>
+                <div class="w-64 h-40 mx-3 flex-shrink-0 rounded-xl overflow-hidden bg-slate-900 border border-white/10 shadow-lg relative group">
+                    <img src="/optimize/3.webp" alt="Carrera 3" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=600&q=80'">
+                </div>
+                <div class="w-64 h-40 mx-3 flex-shrink-0 rounded-xl overflow-hidden bg-slate-900 border border-white/10 shadow-lg relative group">
+                    <img src="/optimize/4.webp" alt="Carrera 4" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1517649763962-0c6232660102?auto=format&fit=crop&w=600&q=80'">
+                </div>
+                <div class="w-64 h-40 mx-3 flex-shrink-0 rounded-xl overflow-hidden bg-slate-900 border border-white/10 shadow-lg relative group">
+                    <img src="/optimize/5.webp" alt="Carrera 4" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1517649763962-0c6232660102?auto=format&fit=crop&w=600&q=80'">
+                </div>
+                <div class="w-64 h-40 mx-3 flex-shrink-0 rounded-xl overflow-hidden bg-slate-900 border border-white/10 shadow-lg relative group">
+                    <img src="/optimize/6.webp" alt="Carrera 4" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1517649763962-0c6232660102?auto=format&fit=crop&w=600&q=80'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTRO / CONCEPTO -->
+    <section class="py-20 bg-rompe-black relative overflow-hidden" id="sobre-el-evento">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="reveal">
+                    <span class="text-rompe-red font-black uppercase tracking-widest text-xs">Mucho más que una carrera</span>
+                    <h2 class="text-3xl md:text-4xl font-black uppercase mt-2 mb-6 text-white">
+                        Conectando <span class="text-rompe-red">Espiel y Belmez</span>
+                    </h2>
+                    <p class="text-slate-300 text-sm md:text-base leading-relaxed mb-6">
+                        <strong>LA ROMPEPIERNAS 2027</strong> es un acontecimiento deportivo que reúne en una misma jornada distintas modalidades y conecta los municipios de Espiel y Belmez. Una cita que combina deporte, participación, convivencia y promoción del Valle del Guadiato.
+                    </p>
+                    <p class="text-slate-400 text-xs md:text-sm leading-relaxed">
+                        Organizado por los Ayuntamientos de Belmez y Espiel y la Mancomunidad de Municipios Valle del Guadiato, con la voluntad de consolidar un evento que moviliza a deportistas, acompañantes y voluntariado.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 gap-4 reveal">
+                    <div class="bg-rompe-card p-6 rounded-2xl border border-white/10 text-center flex flex-col justify-center">
+                        <div class="text-3xl md:text-5xl font-black text-rompe-red mb-2">500</div>
+                        <div class="text-[10px] md:text-xs uppercase tracking-wider text-slate-400 font-bold">Participantes en 2026</div>
+                    </div>
+                    <div class="bg-rompe-card p-6 rounded-2xl border border-white/10 text-center flex flex-col justify-center">
+                        <div class="text-3xl md:text-5xl font-black text-white mb-2">800</div>
+                        <div class="text-[10px] md:text-xs uppercase tracking-wider text-slate-400 font-bold">Objetivo 2027*</div>
+                    </div>
+                    <div class="col-span-2 bg-rompe-card p-5 rounded-2xl border border-rompe-red/30 text-center">
+                        <div class="text-xl font-black text-white mb-1">4 Modalidades Deportivas</div>
+                        <div class="text-xs text-slate-400">Atractivo comarcal y exterior (participantes de otras comunidades)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CUATRO MODALIDADES -->
+    <section class="py-20 bg-rompe-card bg-pattern" id="modalidades">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="text-center mb-16 reveal">
+                <span class="text-rompe-red font-black uppercase tracking-widest text-xs">Retos de gran nivel</span>
+                <h2 class="text-3xl md:text-4xl font-black uppercase text-white mt-2">Cuatro pruebas, un mismo proyecto</h2>
+                <div class="w-16 h-1 bg-rompe-red mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Mod 1 -->
+                <div class="bg-rompe-gray p-6 rounded-2xl border border-white/10 card-hover transition duration-300 reveal flex flex-col justify-between">
+                    <div>
+                        <div class="text-rompe-red font-black text-2xl mb-3">01</div>
+                        <h3 class="text-lg font-bold uppercase text-white mb-2">XXVII Media Maratón Espiel–Belmez</h3>
+                        <p class="text-slate-400 text-xs">Una prueba de referencia absoluta para corredores populares y atletas de fondo.</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-white/10 text-[10px] font-bold text-rompe-red uppercase">Modalidad clásica</div>
+                </div>
+
+                <!-- Mod 2 -->
+                <div class="bg-rompe-gray p-6 rounded-2xl border border-white/10 card-hover transition duration-300 reveal reveal-delay-1 flex flex-col justify-between">
+                    <div>
+                        <div class="text-rompe-red font-black text-2xl mb-3">02</div>
+                        <h3 class="text-lg font-bold uppercase text-white mb-2">V Maratón</h3>
+                        <p class="text-slate-400 text-xs">Un reto deportivo de mayor distancia, con gran capacidad de atraer participantes de otras comunidades autónomas.</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-white/10 text-[10px] font-bold text-rompe-red uppercase">Gran fondo</div>
+                </div>
+
+                <!-- Mod 3 -->
+                <div class="bg-rompe-gray p-6 rounded-2xl border border-white/10 card-hover transition duration-300 reveal reveal-delay-2 flex flex-col justify-between">
+                    <div>
+                        <div class="text-rompe-red font-black text-2xl mb-3">03</div>
+                        <h3 class="text-lg font-bold uppercase text-white mb-2">X Senderismo</h3>
+                        <p class="text-slate-400 text-xs">Una propuesta idónea para disfrutar de la naturaleza del entorno y participar en la jornada desde otra perspectiva.</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-white/10 text-[10px] font-bold text-rompe-red uppercase">Participativo</div>
+                </div>
+
+                <!-- Mod 4 -->
+                <div class="bg-rompe-gray p-6 rounded-2xl border border-white/10 card-hover transition duration-300 reveal reveal-delay-3 flex flex-col justify-between">
+                    <div>
+                        <div class="text-rompe-red font-black text-2xl mb-3">04</div>
+                        <h3 class="text-lg font-bold uppercase text-white mb-2">XXI Carrera de Menores</h3>
+                        <p class="text-slate-400 text-xs">Una apuesta firme por acercar el deporte y los hábitos saludables a los más jóvenes del Valle del Guadiato.</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-white/10 text-[10px] font-bold text-rompe-red uppercase">Cantera</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA DE SOPORTES DE VISIBILIDAD (PRENDAS, MEDALLAS, DORSALES) -->
+    <section class="py-24 bg-rompe-black relative" id="soportes-marca">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="text-center mb-16 reveal">
+                <span class="text-rompe-red font-black uppercase tracking-widest text-xs">Espacios de alto impacto</span>
+                <h2 class="text-3xl md:text-5xl font-black uppercase text-white mt-2">Galería de Soportes y Visibilidad de Marca</h2>
+                <div class="w-16 h-1 bg-rompe-red mx-auto mt-4"></div>
+                <p class="mt-4 text-slate-400 max-w-2xl mx-auto text-sm">
+                    Descubre dónde se lucirá el logotipo de tu empresa para garantizar la máxima exposición visual ante deportistas y público.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8 items-stretch">
+                <!-- Soporte 1: Prendas Técnicas -->
+                <div class="bg-rompe-card rounded-2xl border border-white/10 overflow-hidden card-hover reveal flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-72 bg-rompe-gray flex items-center justify-center p-4 overflow-hidden border-b border-white/10">
+                            <img src="/images/prendas-26.webp" alt="Prendas Deportivas 2026" class="w-full h-full object-contain transform hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-rompe-red text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">Equipación Oficial</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold uppercase text-white mb-2">Prendas Deportivas (Cortavientos y Camisetas)</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                                800 prendas técnicas previstas para participantes (camisetas y cortavientos según modalidad) y 100 camisetas para voluntarios. Espacio principal para el logotipo del patrocinador.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 text-xs text-rompe-red font-semibold uppercase tracking-wide">
+                        <i class="fas fa-check-circle mr-1"></i> Máxima visibilidad en ruta y podios
+                    </div>
+                </div>
+
+      
+            </div>
+        </div>
+    </section>
+
+    <!-- CANALES DE COMUNICACIÓN -->
+    <section class="py-20 bg-rompe-card" id="comunicacion">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="text-center mb-16 reveal">
+                <span class="text-rompe-red font-black uppercase tracking-widest text-xs">Exposición total</span>
+                <h2 class="text-3xl md:text-4xl font-black uppercase text-white mt-2">Tu marca presente antes, durante y después</h2>
+                <div class="w-16 h-1 bg-rompe-red mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-rompe-gray p-6 rounded-2xl border border-white/5 reveal">
+                    <i class="fas fa-share-alt text-3xl text-rompe-red mb-3"></i>
+                    <h3 class="text-base font-bold uppercase text-white mb-2">Redes Sociales</h3>
+                    <p class="text-slate-400 text-xs">Comunidad activa con 2.000 seguidores en Facebook y 1.500 en Instagram.</p>
+                </div>
+                <div class="bg-rompe-gray p-6 rounded-2xl border border-white/5 reveal reveal-delay-1">
+                    <i class="fas fa-globe text-3xl text-rompe-red mb-3"></i>
+                    <h3 class="text-base font-bold uppercase text-white mb-2">Página Web Propia</h3>
+                    <p class="text-slate-400 text-xs">Plataforma digital de referencia informativa y canal directo de inscripción.</p>
+                </div>
+                <div class="bg-rompe-gray p-6 rounded-2xl border border-white/5 reveal reveal-delay-2">
+                    <i class="fas fa-bullhorn text-3xl text-rompe-red mb-3"></i>
+                    <h3 class="text-base font-bold uppercase text-white mb-2">Publicidad Especializada</h3>
+                    <p class="text-slate-400 text-xs">Contratación de espacios estratégicos en medios especializados en atletismo.</p>
+                </div>
+                <div class="bg-rompe-gray p-6 rounded-2xl border border-white/5 reveal">
+                    <i class="fas fa-camera text-3xl text-rompe-red mb-3"></i>
+                    <h3 class="text-base font-bold uppercase text-white mb-2">Reportaje Fotográfico</h3>
+                    <p class="text-slate-400 text-xs">Cobertura gráfica profesional y difusión masiva de galerías de la jornada.</p>
+                </div>
+                <div class="bg-rompe-gray p-6 rounded-2xl border border-white/5 reveal reveal-delay-1">
+                    <i class="fas fa-flag text-3xl text-rompe-red mb-3"></i>
+                    <h3 class="text-base font-bold uppercase text-white mb-2">Soportes Físicos</h3>
+                    <p class="text-slate-400 text-xs">Lonas, photocall corporativo y cartelería oficial desplegada en la comarca.</p>
+                </div>
+                <div class="bg-rompe-gray p-6 rounded-2xl border border-white/5 reveal reveal-delay-2">
+                    <i class="fas fa-tshirt text-3xl text-rompe-red mb-3"></i>
+                    <h3 class="text-base font-bold uppercase text-white mb-2">Prendas Deportivas</h3>
+                    <p class="text-slate-400 text-xs">800 prendas técnicas y 100 camisetas de voluntarios con visibilidad de marca.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TARIFAS DE PATROCINIO -->
+    <section class="py-24 bg-rompe-black" id="tarifas">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="text-center mb-16 reveal">
+                <span class="text-rompe-red font-black uppercase tracking-widest text-xs">Súmate al proyecto</span>
+                <h2 class="text-3xl md:text-5xl font-black uppercase text-white mt-2">Propuesta de <span class="text-rompe-red">Patrocinio</span></h2>
+                <div class="w-16 h-1 bg-rompe-red mx-auto mt-4"></div>
+                <p class="mt-4 text-slate-400 max-w-2xl mx-auto text-sm">
+                    Patrocinio general para el conjunto de La Rompepiernas 2027. No se comercializan patrocinios separados por modalidad ni ninguna empresa dará nombre al evento.
+                </p>
+            </div>
+
+            <!-- Tarifas Cards -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                <!-- Principal -->
+                <div class="bg-rompe-card rounded-2xl border-2 border-rompe-red shadow-2xl flex flex-col card-hover transition duration-300 reveal">
+                    <div class="bg-rompe-red text-white text-center text-xs font-black py-2 uppercase tracking-widest">
+                        Nivel Máximo
+                    </div>
+                    <div class="p-8 border-b border-white/10 text-center">
+                        <h3 class="text-xl font-black uppercase text-white mb-2">Patrocinador Principal</h3>
+                        <div class="text-4xl font-black text-rompe-red mb-1">2.000 €</div>
+                        <span class="text-xs text-slate-400 font-semibold uppercase">Aportación mínima de referencia</span>
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <p class="text-xs text-slate-300 mb-6 font-bold uppercase tracking-wide text-rompe-red">Máxima presencia en prendas y soportes.</p>
+                        <ul class="space-y-3 text-xs text-slate-300">
+                            <li><i class="fas fa-check text-rompe-red mr-2"></i> Camiseta participantes (Preferente)</li>
+                            <li><i class="fas fa-check text-rompe-red mr-2"></i> Cortavientos (Preferente)</li>
+                            <li><i class="fas fa-check text-rompe-red mr-2"></i> Camiseta voluntarios (Preferente)</li>
+                            <li><i class="fas fa-check text-rompe-red mr-2"></i> Cartelería, lonas y photocall</li>
+                            <li><i class="fas fa-check text-rompe-red mr-2"></i> Redes: Publicación específica</li>
+                        </ul>
+                    </div>
+                    <div class="p-6 mt-auto">
+                        <a href="mailto:graciano@guadiato.es?subject=Interes%20Patrocinio%20Principal%20Rompepiernas" class="block w-full text-center bg-rompe-red hover:bg-red-700 text-white font-black uppercase tracking-wider py-3.5 rounded-xl transition text-xs shadow-lg">Seleccionar</a>
+                    </div>
+                </div>
+
+                <!-- Oro -->
+                <div class="bg-rompe-card rounded-2xl border border-white/20 shadow-xl flex flex-col card-hover transition duration-300 reveal reveal-delay-1">
+                    <div class="bg-white text-rompe-black text-center text-xs font-black py-2 uppercase tracking-widest">
+                        Destacado
+                    </div>
+                    <div class="p-8 border-b border-white/10 text-center">
+                        <h3 class="text-xl font-black uppercase text-white mb-2">Patrocinador Oro</h3>
+                        <div class="text-4xl font-black text-white mb-1">1.000 €</div>
+                        <span class="text-xs text-slate-400 font-semibold uppercase">Aportación mínima de referencia</span>
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <p class="text-xs text-slate-300 mb-6 font-bold uppercase tracking-wide text-slate-400">Presencia destacada en camisetas, cortavientos y comunicación.</p>
+                        <ul class="space-y-3 text-xs text-slate-300">
+                            <li><i class="fas fa-check text-white mr-2"></i> Camiseta participantes (Destacado)</li>
+                            <li><i class="fas fa-check text-white mr-2"></i> Cortavientos (Destacado)</li>
+                            <li><i class="fas fa-check text-white mr-2"></i> Camiseta voluntarios (Secundario)</li>
+                            <li><i class="fas fa-check text-white mr-2"></i> Cartelería, web y soportes</li>
+                            <li><i class="fas fa-check text-white mr-2"></i> Redes: Publicación RRSS</li>
+                        </ul>
+                    </div>
+                    <div class="p-6 mt-auto">
+                        <a href="mailto:graciano@guadiato.es?subject=Interes%20Patrocinio%20Oro%20Rompepiernas" class="block w-full text-center bg-white hover:bg-slate-200 text-rompe-black font-black uppercase tracking-wider py-3.5 rounded-xl transition text-xs shadow-lg">Seleccionar</a>
+                    </div>
+                </div>
+
+                <!-- Plata -->
+                <div class="bg-rompe-card rounded-2xl border border-white/10 shadow-xl flex flex-col card-hover transition duration-300 reveal reveal-delay-2">
+                    <div class="bg-rompe-gray text-white text-center text-xs font-black py-2 uppercase tracking-widest border-t border-white/10">
+                        Estándar
+                    </div>
+                    <div class="p-8 border-b border-white/10 text-center">
+                        <h3 class="text-xl font-black uppercase text-white mb-2">Patrocinador Plata</h3>
+                        <div class="text-4xl font-black text-white mb-1">500 €</div>
+                        <span class="text-xs text-slate-400 font-semibold uppercase">Aportación mínima de referencia</span>
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <p class="text-xs text-slate-300 mb-6 font-bold uppercase tracking-wide text-slate-400">Presencia en soportes de comunicación y publicidad.</p>
+                        <ul class="space-y-3 text-xs text-slate-300">
+                            <li><i class="fas fa-check text-slate-400 mr-2"></i> Cartelería oficial (Sí)</li>
+                            <li><i class="fas fa-check text-slate-400 mr-2"></i> Lonas y photocall (Sí)</li>
+                            <li><i class="fas fa-check text-slate-400 mr-2"></i> Página web y comunicaciones</li>
+                            <li><i class="fas fa-check text-slate-400 mr-2"></i> Redes Sociales: Mención</li>
+                            <li><i class="fas fa-check text-slate-400 mr-2"></i> Agradecimiento público</li>
+                        </ul>
+                    </div>
+                    <div class="p-6 mt-auto">
+                        <a href="mailto:graciano@guadiato.es?subject=Interes%20Patrocinio%20Plata%20Rompepiernas" class="block w-full text-center bg-rompe-gray hover:bg-slate-800 text-white font-black uppercase tracking-wider py-3.5 rounded-xl transition text-xs border border-white/20">Seleccionar</a>
+                    </div>
+                </div>
+
+                <!-- Colaboradora -->
+                <div class="bg-rompe-card rounded-2xl border border-white/10 shadow-xl flex flex-col card-hover transition duration-300 reveal reveal-delay-3">
+                    <div class="bg-rompe-gray text-white text-center text-xs font-black py-2 uppercase tracking-widest border-t border-white/10">
+                        Apoyo Local
+                    </div>
+                    <div class="p-8 border-b border-white/10 text-center">
+                        <h3 class="text-xl font-black uppercase text-white mb-2">Empresa Colaboradora</h3>
+                        <div class="text-4xl font-black text-white mb-1">200 €</div>
+                        <span class="text-xs text-slate-400 font-semibold uppercase">Aportación mínima de referencia</span>
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <p class="text-xs text-slate-300 mb-6 font-bold uppercase tracking-wide text-slate-400">Presencia y reconocimiento como empresa colaboradora.</p>
+                        <ul class="space-y-3 text-xs text-slate-300">
+                            <li><i class="fas fa-check text-slate-400 mr-2"></i> Cartelería oficial</li>
+                            <li><i class="fas fa-check text-slate-400 mr-2"></i> Lonas (según espacio)</li>
+                            <li><i class="fas fa-check text-slate-400 mr-2"></i> Web y comunicaciones</li>
+                            <li><i class="fas fa-check text-slate-400 mr-2"></i> Redes Sociales: Agradecimiento</li>
+                        </ul>
+                    </div>
+                    <div class="p-6 mt-auto">
+                        <a href="mailto:graciano@guadiato.es?subject=Interes%20Empresa%20Colaboradora%20Rompepiernas" class="block w-full text-center bg-rompe-gray hover:bg-slate-800 text-white font-black uppercase tracking-wider py-3.5 rounded-xl transition text-xs border border-white/20">Seleccionar</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabla de Visibilidad Detallada -->
+            <div class="bg-rompe-card rounded-2xl border border-white/10 p-6 md:p-8 overflow-x-auto reveal">
+                <h3 class="text-xl font-black uppercase text-white mb-6 text-center">Matriz de Visibilidad por Categoría</h3>
+                <table class="w-full text-left border-collapse text-xs md:text-sm">
+                    <thead>
+                        <tr class="border-b border-white/10 text-white">
+                            <th class="py-3 px-4 font-bold">Soporte / Canal</th>
+                            <th class="py-3 px-4 font-bold text-rompe-red">Principal (2.000€)</th>
+                            <th class="py-3 px-4 font-bold text-white">Oro (1.000€)</th>
+                            <th class="py-3 px-4 font-bold text-slate-400">Plata (500€)</th>
+                            <th class="py-3 px-4 font-bold text-slate-400">Colaborador (200€)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-white/5 text-slate-300">
+                        <tr>
+                            <td class="py-3 px-4 font-medium text-white">Camiseta participantes</td>
+                            <td class="py-3 px-4 font-bold text-rompe-red">Preferente</td>
+                            <td class="py-3 px-4">Destacado</td>
+                            <td class="py-3 px-4 text-slate-500">—</td>
+                            <td class="py-3 px-4 text-slate-500">—</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 font-medium text-white">Cortavientos</td>
+                            <td class="py-3 px-4 font-bold text-rompe-red">Preferente</td>
+                            <td class="py-3 px-4">Destacado</td>
+                            <td class="py-3 px-4 text-slate-500">—</td>
+                            <td class="py-3 px-4 text-slate-500">—</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 font-medium text-white">Camiseta voluntarios</td>
+                            <td class="py-3 px-4 font-bold text-rompe-red">Preferente</td>
+                            <td class="py-3 px-4">Secundario</td>
+                            <td class="py-3 px-4 text-slate-500">—</td>
+                            <td class="py-3 px-4 text-slate-500">—</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 font-medium text-white">Cartelería oficial</td>
+                            <td class="py-3 px-4 font-bold text-rompe-red">Preferente</td>
+                            <td class="py-3 px-4">Destacado</td>
+                            <td class="py-3 px-4">Sí</td>
+                            <td class="py-3 px-4">Sí</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 font-medium text-white">Lonas publicitarias</td>
+                            <td class="py-3 px-4 font-bold text-rompe-red">Preferente</td>
+                            <td class="py-3 px-4">Sí</td>
+                            <td class="py-3 px-4">Sí</td>
+                            <td class="py-3 px-4">Según espacio</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 font-medium text-white">Photocall</td>
+                            <td class="py-3 px-4 font-bold text-rompe-red">Preferente</td>
+                            <td class="py-3 px-4">Sí</td>
+                            <td class="py-3 px-4">Sí</td>
+                            <td class="py-3 px-4">Sí</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 font-medium text-white">Página Web</td>
+                            <td class="py-3 px-4 font-bold text-rompe-red">Destacado</td>
+                            <td class="py-3 px-4">Sí</td>
+                            <td class="py-3 px-4">Sí</td>
+                            <td class="py-3 px-4">Sí</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 font-medium text-white">Facebook e Instagram</td>
+                            <td class="py-3 px-4 font-bold text-rompe-red">Publicación específica</td>
+                            <td class="py-3 px-4">Publicación</td>
+                            <td class="py-3 px-4">Mención</td>
+                            <td class="py-3 px-4">Agradecimiento</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- MEJORAS DE LA EXPERIENCIA Y COLABORACIÓN EN ESPECIE -->
+    <section class="py-24 bg-rompe-card border-t border-white/5" id="inversion">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div class="reveal">
+                    <span class="text-rompe-red font-black uppercase tracking-widest text-xs">Destino de los fondos</span>
+                    <h3 class="text-2xl md:text-3xl font-black uppercase text-white mt-2 mb-6">Invertir en una mejor experiencia</h3>
+                    <p class="text-slate-300 text-sm mb-6">Las aportaciones de patrocinadores y colaboradores permiten impulsar mejoras directas en los servicios:</p>
+                    <div class="space-y-4">
+                        <div class="bg-rompe-gray p-4 rounded-xl border border-white/5 flex items-start gap-4">
+                            <i class="fas fa-gift text-rompe-red text-xl mt-1"></i>
+                            <div><strong>Bolsa del participante:</strong> Mejorar obsequios, productos y materiales.</div>
+                        </div>
+                        <div class="bg-rompe-gray p-4 rounded-xl border border-white/5 flex items-start gap-4">
+                            <i class="fas fa-tint text-rompe-red text-xl mt-1"></i>
+                            <div><strong>Avituallamientos:</strong> Reforzar calidad, variedad y distribución en ruta.</div>
+                        </div>
+                        <div class="bg-rompe-gray p-4 rounded-xl border border-white/5 flex items-start gap-4">
+                            <i class="fas fa-trophy text-rompe-red text-xl mt-1"></i>
+                            <div><strong>Premios y reconocimientos:</strong> Mejorar galardones destinados a los participantes.</div>
+                        </div>
+                        <div class="bg-rompe-gray p-4 rounded-xl border border-white/5 flex items-start gap-4">
+                            <i class="fas fa-tools text-rompe-red text-xl mt-1"></i>
+                            <div><strong>Infraestructura y servicios:</strong> Espacios, señalización y medios necesarios.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal">
+                    <span class="text-rompe-red font-black uppercase tracking-widest text-xs">Apoyo alternativo</span>
+                    <h3 class="text-2xl md:text-3xl font-black uppercase text-white mt-2 mb-6">También puedes colaborar en especie</h3>
+                    <p class="text-slate-300 text-sm mb-6">Se aceptan aportaciones de productos y servicios útiles para el evento:</p>
+                    <div class="bg-rompe-gray p-6 rounded-2xl border border-white/5 space-y-3 text-sm text-slate-300">
+                        <p><i class="fas fa-check text-rompe-red mr-2"></i> Agua, bebidas, fruta y alimentación.</p>
+                        <p><i class="fas fa-check text-rompe-red mr-2"></i> Productos para la bolsa del corredor.</p>
+                        <p><i class="fas fa-check text-rompe-red mr-2"></i> Material deportivo, trofeos y regalos.</p>
+                        <p><i class="fas fa-check text-rompe-red mr-2"></i> Impresión, fotografía, publicidad, logística y servicios.</p>
+                        <p class="text-xs text-slate-400 italic mt-4 pt-4 border-t border-white/10">
+                            Todas las empresas que colaboren en especie tendrán presencia y reconocimiento acordado previamente con la organización.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER / CONTACTO -->
+    <footer class="bg-rompe-red text-white py-20 relative overflow-hidden text-center border-t-4 border-white">
+        <div class="container mx-auto px-6 relative z-10 max-w-4xl">
+            <h2 class="text-4xl md:text-5xl font-black uppercase mb-4 tracking-tight">Forma parte de La Rompepiernas 2027</h2>
+            <p class="text-lg text-white/90 mb-10 font-medium max-w-2xl mx-auto">
+                Buscamos empresas que quieran contribuir al crecimiento de un acontecimiento deportivo que une a Espiel y Belmez y proyecta el Valle del Guadiato.
+            </p>
+            
+            <div class="bg-black/30 p-8 rounded-2xl backdrop-blur-md border border-white/20 max-w-lg mx-auto mb-12 text-left shadow-2xl">
+                <h4 class="text-lg font-black uppercase mb-6 text-center text-white tracking-wider border-b border-white/10 pb-3">Contacto para Patrocinios</h4>
+                <div class="space-y-4 text-sm">
+                    <p class="flex items-center gap-4"><i class="fas fa-user text-white text-lg"></i> <strong class="text-white">Graciano Obrero Portillo</strong></p>
+                    <p class="flex items-center gap-4"><i class="fas fa-phone-alt text-white text-lg"></i> <a href="tel:637528092" class="hover:underline text-white font-bold">637 528 092</a></p>
+                    <p class="flex items-center gap-4"><i class="fas fa-envelope text-white text-lg"></i> <a href="mailto:graciano@guadiato.es" class="hover:underline text-white font-bold">graciano@guadiato.es</a></p>
+                </div>
+            </div>
+
+            <!-- LOGOS ORGANIZADORES EN EL FOOTER -->
+            <div class="mb-10 pt-6 border-t border-white/20">
+                <p class="text-xs text-white/80 font-bold uppercase tracking-wider mb-4">Entidades Organizadoras:</p>
+                <div class="flex flex-wrap justify-center items-center gap-6">
+                    <div class="bg-white p-2 rounded-lg shadow-md flex items-center justify-center h-14 w-28">
+                        <img src="/images/logos/belmez.png" alt="Ayuntamiento de Belmez" class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div class="bg-white p-2 rounded-lg shadow-md flex items-center justify-center h-14 w-28">
+                        <img src="/images/logos/espiel.png" alt="Ayuntamiento de Espiel" class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div class="bg-white p-2 rounded-lg shadow-md flex items-center justify-center h-14 w-28">
+                        <img src="/images/logos/logo-mancomunidad-guadiato-borde-azul-vector.png" alt="Mancomunidad Valle del Guadiato" class="max-h-full max-w-full object-contain">
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-xs text-white/60 font-medium">
+                &copy; 2027 La Rompepiernas · 3 de Abril · Espiel – Belmez. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPT ANIMACIONES -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            const revealOptions = {
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            };
+            
+            const revealObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                });
+            }, revealOptions);
+
+            revealElements.forEach(el => {
+                revealObserver.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
